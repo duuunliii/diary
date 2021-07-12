@@ -53,3 +53,15 @@
     color: $color;
   }
 }
+
+@mixin text-weight($weight) {
+  @if ($weight == 300) {
+    font-family: $light;
+  } @else if ($weight == 400) {
+    font-family: $regular;
+  } @else if ($weight == 700) {
+    font-family: $bold;
+  } @else {
+    font-family: $regular;
+  }
+}
