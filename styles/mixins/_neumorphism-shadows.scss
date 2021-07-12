@@ -1,0 +1,11 @@
+@mixin basic-shadow($border-radius: false) {
+  background-color: $background;
+  border-radius: $border-radius;
+  box-shadow: 10px 10px 20px #c2c5c7, -10px -10px 20px $white;
+}
+
+@mixin reversed-shadow($border-radius: false) {
+  background-color: $background;
+  border-radius: $border-radius;
+  box-shadow: inset 10px 10px 20px #c2c5c7, inset -10px -10px 20px $white;
+}
