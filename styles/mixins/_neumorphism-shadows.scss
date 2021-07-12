@@ -9,3 +9,9 @@
   border-radius: $border-radius;
   box-shadow: inset 10px 10px 20px #c2c5c7, inset -10px -10px 20px $white;
 }
+
+@mixin basic-shadow-light($border-radius: $rect) {
+  background-color: $background;
+  border-radius: $border-radius;
+  box-shadow: 33px 33px 65px #e7eaed, -33px -33px 65px $white;
+}
