@@ -1,7 +1,8 @@
 .modal {
-  @include basic-shadow($modal);
   @include pos-center(center, fixed);
   z-index: $modal-level;
+  background-color: $background;
+  border-radius: $modal;
   opacity: 0;
   visibility: hidden;
   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
@@ -35,8 +36,9 @@
 
   &-buttons {
     button {
-      @include text-style(18, $primary);
+      @include text-style(14, $primary);
       @include text-weight(700);
+      margin: 0 20px;
       transition: text-shadow 200ms ease-in-out;
 
       &:hover {
