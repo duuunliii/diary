@@ -90,10 +90,41 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
+            <div class="local-info">
+              <h1 class="time">00:00</h1>
+              <h3 class="date">2021.07.14 WED</h3>
+              <p class="weather">weather of today</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">
             <div class="d-day">
               <button class="d-day-setting-button" type="button">
                 <h1 class="d-day-letter">Set Your <br />D-day</h1>
               </button>
+
+              <div class="modal d-day-modal">
+                <div class="modal-contents">
+                  <form action="" method="POST" id="d-day-form">
+                    <label for="d-day-input" class="visually-hidden"
+                      >User Image</label
+                    >
+                    <input id="d-day-input" type="date" accept=".png, .jpg" />
+                  </form>
+                  <div class="modal-buttons">
+                    <button class="cancel-button" type="button">Cancel</button>
+                    <button
+                      class="submit-button"
+                      type="button"
+                      form="user-img-form"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -101,5 +132,7 @@
     </main>
 
     <div class="overlay" aria-hidden></div>
+    <script src="./script/userProfile.js"></script>
+    <script src="./script/dday.js"></script>
   </body>
 </html>
