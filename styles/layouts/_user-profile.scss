@@ -4,7 +4,7 @@
 
   &-greeting {
     @include text-style(22);
-    @include text-weight(300);
+    @include text-weight(400);
 
     .user-name-change-btn {
       .user-name {

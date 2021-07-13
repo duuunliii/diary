@@ -20,7 +20,7 @@
 
   &-letter {
     @include text-style(18, $primary);
-    @include text-weight(300);
+    @include text-weight(400);
     text-align: center;
     transition: text-shadow 200ms ease-in-out;
   }
