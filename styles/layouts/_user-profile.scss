@@ -28,7 +28,7 @@
       padding: 0;
       background-color: #f3f6f9;
       border-radius: $circle;
-      box-shadow: 5px 5px 5px #cfd1d4, -5px -5px 5px $white;
+      box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px $white;
 
       img {
         @include pos-center(center);

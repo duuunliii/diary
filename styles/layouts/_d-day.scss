@@ -1,10 +1,12 @@
 .d-day {
-  @include basic-shadow($circle);
   @include flexbox;
   position: relative;
   width: 200px;
   height: 200px;
   margin: 30px auto;
+  background-color: $background;
+  border-radius: $circle;
+  box-shadow: 5px 5px 10px #bbbdc0, -5px -5px 10px $white;
 
   &-setting-button {
     width: 100%;
@@ -27,11 +29,13 @@
 }
 
 .d-day::before {
-  @include basic-shadow-light($circle);
   position: absolute;
   z-index: $pseudo-level;
   display: block;
   width: 240px;
   height: 240px;
+  background-color: $background;
+  border-radius: $circle;
   content: '';
+  box-shadow: 33px 33px 65px #e7eaed, -33px -33px 65px $white;
 }
