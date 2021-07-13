@@ -1,0 +1,45 @@
+.user-profile {
+  @include flexbox(between);
+  padding: 10px 10px;
+
+  &-greeting {
+    @include text-style(22);
+    @include text-weight(300);
+
+    .user-name-change-btn {
+      .user-name {
+        @include text-weight(700);
+        color: $primary;
+        transition: text-shadow 200ms ease-in-out;
+
+        &:hover {
+          text-shadow: $text-shadow;
+        }
+      }
+    }
+  }
+
+  &-img {
+    .user-img-change-btn {
+      position: relative;
+      display: block;
+      width: 55px;
+      height: 55px;
+      padding: 0;
+      background-color: #f3f6f9;
+      border-radius: $circle;
+      box-shadow: 5px 5px 5px #cfd1d4, -5px -5px 5px $white;
+
+      img {
+        @include pos-center(center);
+        width: 40px;
+        height: 40px;
+        border-radius: $circle;
+      }
+
+      &:active {
+        box-shadow: inset 5px 5px 5px #cfd1d4, inset -5px -5px 5px $white;
+      }
+    }
+  }
+}
