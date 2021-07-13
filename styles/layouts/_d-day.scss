@@ -22,7 +22,7 @@
 
   &-letter {
     @include text-style(18, $primary);
-    @include text-weight(400);
+    @include text-weight(700);
     text-align: center;
     transition: text-shadow 200ms ease-in-out;
   }
