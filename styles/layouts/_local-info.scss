@@ -1,0 +1,21 @@
+.local-info {
+  padding: 15px 0;
+  text-align: center;
+
+  .time {
+    @include text-weight(700);
+    margin-bottom: 5px;
+    font-size: 32px;
+  }
+
+  .date {
+    @include text-style(18);
+    @include text-weight(700);
+    margin-bottom: 5px;
+  }
+
+  .weather {
+    @include text-style(14);
+    @include text-weight(400);
+  }
+}
