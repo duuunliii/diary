@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,13 +8,83 @@
     <title>Diary</title>
   </head>
   <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="user-profile">
+              <h1 class="user-profile-greeting">
+                Hello,
+                <button class="user-name-change-btn" type="button">
+                  <strong class="user-name">stranger</strong>
+                </button>
+                <div class="user-name-change-modal">
+                  <form action="" method="POST" id="user-name-form">
+                    <label for="user-name-input" class="visually-hidden"
+                      >User Name</label
+                    >
+                    <input
+                      id="user-name-input"
+                      type="text"
+                      placeholder="What's your name?"
+                      maxlength="12"
+                    />
+                  </form>
+                  <div class="modal-buttons">
+                    <button class="cancel-button" type="button">Cancel</button>
+                    <button
+                      class="submit-button"
+                      type="submit"
+                      form="user-name-form"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </h1>
+
+              <div class="user-profile-img">
+                <button class="user-img-change-btn" type="button">
+                  <img
+                    src="./assets/user-profile.jpg"
+                    alt="user profile image"
+                  />
+                </button>
+                <div class="user-img-change-modal">
+                  <form action="" method="POST" id="user-img-form">
+                    <label for="user-img-input" class="visually-hidden"
+                      >User Image</label
+                    >
+                    <input
+                      id="user-img-input"
+                      type="file"
+                      accept=".png, .jpg"
+                    />
+                  </form>
+                  <div class="modal-buttons">
+                    <button class="cancel-button" type="button">Cancel</button>
+                    <button
+                      class="submit-button"
+                      type="submit"
+                      form="user-img-form"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
     <main>
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
             <div class="d-day">
               <button class="d-day-setting-button" type="button">
-                <h1 class="d-day-letter" lang="en">Set Your <br />D-day</h1>
+                <h1 class="d-day-letter">Set Your <br />D-day</h1>
               </button>
             </div>
           </div>
