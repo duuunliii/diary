@@ -129,6 +129,67 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="todo">
+              <header class="todo-header">
+                <h1 class="todo-title">TO DO</h1>
+                <button class="todo-add-btn" type="button">
+                  <img src="./assets/todo-add.png" />
+                </button>
+
+                <div class="modal todo-modal">
+                  <div class="modal-contents">
+                    <form action="" method="POST" id="todo-form">
+                      <label for="todo-form" class="visually-hidden"
+                        >TO DO</label
+                      >
+                      <input type="text" placeholder="What's your todo?" />
+                    </form>
+
+                    <div class="modal-buttons">
+                      <button class="cancel-button" type="button">
+                        Cancel
+                      </button>
+                      <button
+                        class="submit-button"
+                        type="button"
+                        form="user-name-form"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </header>
+
+              <ul class="todo-list">
+                <li class="todo-item is-active">
+                  <button class="todo-done-btn" aria-label="clear to do">
+                    <img src="./assets/todo-default.png" class="default" />
+                    <img src="./assets/todo-done.png" class="done" />
+                    <span class="todo-content">todo sample 1</span>
+                  </button>
+                  <button class="todo-delete-btn" aria-label="delete to do">
+                    <img src="./assets/todo-delete.png" />
+                  </button>
+                </li>
+
+                <li class="todo-item">
+                  <button class="todo-done-btn" aria-label="clear to do">
+                    <img src="./assets/todo-default.png" class="default" />
+                    <img src="./assets/todo-done.png" class="done" />
+                    <span class="todo-content">todo sample 2</span>
+                  </button>
+                  <button class="todo-delete-btn" aria-label="delete to do">
+                    <img src="./assets/todo-delete.png" />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
