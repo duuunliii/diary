@@ -2,7 +2,7 @@ $slide-num: 3;
 
 @for $i from 1 through $slide-num {
   .slider-#{$i} {
-    height: $sm-main-height;
+    max-height: $sm-main-height;
     overflow: scroll;
   }
 }
