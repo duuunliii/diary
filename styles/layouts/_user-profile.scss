@@ -23,6 +23,10 @@ $avatar-margin-size: 10px;
     @include text-weight(400);
 
     .user-name-change-btn {
+      display: inline-block;
+      height: 50px;
+      padding: 0;
+
       .user-name {
         @include text-weight(700);
         color: $primary;

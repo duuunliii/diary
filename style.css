@@ -594,12 +594,16 @@ ol {
     line-height: 30px;
     letter-spacing: -0.001em;
     font-family: "GmarketSansMedium"; }
-    .user-profile-greeting .user-name-change-btn .user-name {
-      font-family: "GmarketSansBold";
-      color: #7d7c7c;
-      transition: text-shadow 200ms ease-in-out; }
-      .user-profile-greeting .user-name-change-btn .user-name:hover {
-        text-shadow: 2px 2px 2px #c2c5c7; }
+    .user-profile-greeting .user-name-change-btn {
+      display: inline-block;
+      height: 50px;
+      padding: 0; }
+      .user-profile-greeting .user-name-change-btn .user-name {
+        font-family: "GmarketSansBold";
+        color: #7d7c7c;
+        transition: text-shadow 200ms ease-in-out; }
+        .user-profile-greeting .user-name-change-btn .user-name:hover {
+          text-shadow: 2px 2px 2px #c2c5c7; }
   .user-profile-img {
     margin-right: 20px; }
     .user-profile-img .user-img-change-btn {
@@ -655,7 +659,7 @@ ol {
   position: relative;
   width: 170px;
   height: 170px;
-  margin: 30px auto 50px auto;
+  margin: 30px auto 30px auto;
   background-color: #f3f6f9;
   border-radius: 50%;
   box-shadow: 5px 5px 10px #bbbdc0, -5px -5px 10px #fff; }
@@ -688,7 +692,7 @@ ol {
 .todo {
   width: 92%;
   padding: 5px 15px;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   background-color: #f3f6f9;
   border-radius: 20px;
   box-shadow: 9px 9px 16px #b4b6b8, -9px -9px 16px #fff; }
