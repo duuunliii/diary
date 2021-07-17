@@ -1,74 +1,72 @@
-$header-height: 80px;
-$avatar-size: 35px;
-$avatar-margin-size: 10px;
-
 .global-header {
+  $avatar-size: 35px;
+  $avatar-margin-size: 10px;
+
   width: 100%;
-  height: $header-height;
-  margin-bottom: 20px;
-}
+  height: $sm-header-height;
 
-.user-profile {
-  @include flexbox(start);
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: $header-height;
-  padding: 20px 20px;
-  background-color: $background;
+  .user-profile {
+    @include flexbox(start);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: $sm-header-height;
+    padding: 20px 20px;
+    background-color: $background;
 
-  &-greeting {
-    @include text-style(22);
-    @include text-weight(400);
+    &-greeting {
+      @include text-style(22);
+      @include text-weight(400);
 
-    .user-name-change-btn {
-      display: inline-block;
-      height: 50px;
-      padding: 0;
+      .user-name-change-btn {
+        display: inline-block;
+        height: 50px;
+        padding: 0;
 
-      .user-name {
-        @include text-weight(700);
-        color: $primary;
-        transition: text-shadow 200ms ease-in-out;
+        .user-name {
+          @include text-weight(700);
+          color: $primary;
+          transition: text-shadow 200ms ease-in-out;
 
-        &:hover {
-          text-shadow: $text-shadow;
+          &:hover {
+            text-shadow: $text-shadow;
+          }
         }
       }
     }
-  }
 
-  &-img {
-    margin-right: 20px;
+    &-img {
+      margin-right: 20px;
 
-    .user-img-change-btn {
-      position: relative;
-      display: block;
-      width: $avatar-size + $avatar-margin-size;
-      height: $avatar-size + $avatar-margin-size;
-      padding: 0;
-      background-color: #f3f6f9;
-      border-radius: $circle;
-      box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px $white;
-
-      .avatar {
-        @include pos-center(center);
-        width: $avatar-size;
-        height: $avatar-size;
-        overflow: hidden;
+      .user-img-change-btn {
+        position: relative;
+        display: block;
+        width: $avatar-size + $avatar-margin-size;
+        height: $avatar-size + $avatar-margin-size;
+        padding: 0;
+        background-color: #f3f6f9;
         border-radius: $circle;
+        box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px $white;
 
-        img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        .avatar {
+          @include pos-center(center);
+          width: $avatar-size;
+          height: $avatar-size;
+          overflow: hidden;
+          border-radius: $circle;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
-      }
 
-      &:active {
-        box-shadow: inset 5px 5px 5px #cfd1d4, inset -5px -5px 5px $white;
+        &:active {
+          box-shadow: inset 5px 5px 5px #cfd1d4, inset -5px -5px 5px $white;
+        }
       }
     }
   }
