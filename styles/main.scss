@@ -3,6 +3,7 @@
 @import './constants/typography';
 @import './constants/breakpoints';
 @import './constants/z-indexes';
+@import './constants/component-height';
 
 @import './base/font-family';
 @import './base/normalize';
@@ -19,6 +20,7 @@
 @import './components/overlay';
 
 @import './layouts/grids';
+@import './layouts/main-slider';
 @import './layouts/user-profile';
 @import './layouts/local-info';
 @import './layouts/d-day';
