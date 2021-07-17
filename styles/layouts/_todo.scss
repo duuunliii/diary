@@ -1,9 +1,9 @@
-$todo-btn-size: 15px;
-
 .todo {
+  $todo-btn-size: 15px;
+
   width: 92%;
   padding: 5px 15px;
-  margin: 30px auto 0 auto;
+  margin: 30px auto 30px auto;
   background-color: $background;
   border-radius: $rect;
   box-shadow: 9px 9px 16px #b4b6b8, -9px -9px 16px $white;
