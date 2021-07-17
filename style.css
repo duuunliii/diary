@@ -332,8 +332,7 @@ html {
 body {
   font-family: 'GmarketSansMedium', sans-serif;
   color: #7d7c7c;
-  background-color: #f3f6f9;
-  overflow: hidden; }
+  background-color: #f3f6f9; }
 
 h1 {
   margin: 0; }
@@ -404,19 +403,20 @@ ol {
     display: none !important; } }
 
 .slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 120px; }
+  height: 18vh;
+  padding: 0 20px;
+  background-color: #f3f6f9; }
   .slider-nav-list {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    padding: 0 20px;
-    background-color: #f3f6f9; }
+    justify-content: center; }
     .slider-nav-list .slider-nav-item {
       margin: 0 20px; }
       .slider-nav-list .slider-nav-item button {
@@ -573,64 +573,74 @@ ol {
       .container .col-lg-12 {
         width: 1140px; } }
 
+.slider-1 {
+  height: 68vh;
+  overflow: scroll; }
+
+.slider-2 {
+  height: 68vh;
+  overflow: scroll; }
+
+.slider-3 {
+  height: 68vh;
+  overflow: scroll; }
+
 .global-header {
   width: 100%;
-  height: 80px;
-  margin-bottom: 20px; }
-
-.user-profile {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 80px;
-  padding: 20px 20px;
-  background-color: #f3f6f9; }
-  .user-profile-greeting {
-    font-size: 22px;
-    line-height: 30px;
-    letter-spacing: -0.001em;
-    font-family: "GmarketSansMedium"; }
-    .user-profile-greeting .user-name-change-btn {
-      display: inline-block;
-      height: 50px;
-      padding: 0; }
-      .user-profile-greeting .user-name-change-btn .user-name {
-        font-family: "GmarketSansBold";
-        color: #7d7c7c;
-        transition: text-shadow 200ms ease-in-out; }
-        .user-profile-greeting .user-name-change-btn .user-name:hover {
-          text-shadow: 2px 2px 2px #c2c5c7; }
-  .user-profile-img {
-    margin-right: 20px; }
-    .user-profile-img .user-img-change-btn {
-      position: relative;
-      display: block;
-      width: 45px;
-      height: 45px;
-      padding: 0;
-      background-color: #f3f6f9;
-      border-radius: 50%;
-      box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px #fff; }
-      .user-profile-img .user-img-change-btn .avatar {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 35px;
-        height: 35px;
-        overflow: hidden;
-        border-radius: 50%; }
-        .user-profile-img .user-img-change-btn .avatar img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover; }
-      .user-profile-img .user-img-change-btn:active {
-        box-shadow: inset 5px 5px 5px #cfd1d4, inset -5px -5px 5px #fff; }
+  height: 14vh; }
+  .global-header .user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 14vh;
+    padding: 20px 20px;
+    background-color: #f3f6f9; }
+    .global-header .user-profile-greeting {
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: -0.001em;
+      font-family: "GmarketSansMedium"; }
+      .global-header .user-profile-greeting .user-name-change-btn {
+        display: inline-block;
+        height: 50px;
+        padding: 0; }
+        .global-header .user-profile-greeting .user-name-change-btn .user-name {
+          font-family: "GmarketSansBold";
+          color: #7d7c7c;
+          transition: text-shadow 200ms ease-in-out; }
+          .global-header .user-profile-greeting .user-name-change-btn .user-name:hover {
+            text-shadow: 2px 2px 2px #c2c5c7; }
+    .global-header .user-profile-img {
+      margin-right: 20px; }
+      .global-header .user-profile-img .user-img-change-btn {
+        position: relative;
+        display: block;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        background-color: #f3f6f9;
+        border-radius: 50%;
+        box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px #fff; }
+        .global-header .user-profile-img .user-img-change-btn .avatar {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 35px;
+          height: 35px;
+          overflow: hidden;
+          border-radius: 50%; }
+          .global-header .user-profile-img .user-img-change-btn .avatar img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+        .global-header .user-profile-img .user-img-change-btn:active {
+          box-shadow: inset 5px 5px 5px #cfd1d4, inset -5px -5px 5px #fff; }
 
 .local-info {
   padding: 15px 0;
