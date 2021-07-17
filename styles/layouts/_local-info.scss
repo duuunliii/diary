@@ -3,14 +3,14 @@
   text-align: center;
 
   .time {
-    @include text-weight(700);
+    @include text-weight(400);
     margin-bottom: 5px;
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .date {
     @include text-style(18);
-    @include text-weight(700);
+    @include text-weight(400);
     margin-bottom: 5px;
   }
 

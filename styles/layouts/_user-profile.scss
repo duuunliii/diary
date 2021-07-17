@@ -6,7 +6,7 @@ $avatar-margin-size: 10px;
   padding: 10px 0;
 
   &-greeting {
-    @include text-style(18);
+    @include text-style(16);
     @include text-weight(400);
 
     .user-name-change-btn {
