@@ -1,0 +1,38 @@
+.slider-nav {
+  &-list {
+    @include flexbox;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 0 20px;
+
+    .slider-nav-item {
+      margin: 0 20px;
+
+      button {
+        @include text-style(14, $primary);
+        @include text-weight(400);
+        display: block;
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+        background-color: $background;
+        border-radius: $modal;
+        box-shadow: 5px 5px 6px #d1d4d6, -5px -5px 6px $white;
+      }
+
+      &.tns-nav-active {
+        button {
+          @include text-weight(700);
+          box-shadow: inset 5px 5px 6px #d1d4d6, inset -5px -5px 6px $white;
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

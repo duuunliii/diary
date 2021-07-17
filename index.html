@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"
+    />
+    <!--[if (lt IE 9)
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script
+    ><![endif]-->
+
     <link rel="stylesheet" href="./style.css" />
     <title>Diary</title>
   </head>
@@ -22,65 +30,12 @@
                     />
                   </div>
                 </button>
-                <div class="modal user-img-modal">
-                  <div class="modal-contents">
-                    <form action="" method="POST" id="user-img-form">
-                      <label for="user-img-input" class="visually-hidden"
-                        >User Image</label
-                      >
-                      <input
-                        id="user-img-input"
-                        type="file"
-                        accept=".png, .jpg"
-                      />
-                    </form>
-                    <div class="modal-buttons">
-                      <button class="cancel-button" type="button">
-                        Cancel
-                      </button>
-                      <button
-                        class="submit-button"
-                        type="button"
-                        form="user-img-form"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
               <h1 class="user-profile-greeting">
                 Hello,
                 <button class="user-name-change-btn" type="button">
                   <strong class="user-name">stranger</strong>
                 </button>
-                <div class="modal user-name-modal">
-                  <div class="modal-contents">
-                    <form action="" method="POST" id="user-name-form">
-                      <label for="user-name-input" class="visually-hidden"
-                        >User Name</label
-                      >
-                      <input
-                        id="user-name-input"
-                        type="text"
-                        placeholder="What's your name?"
-                        maxlength="12"
-                      />
-                    </form>
-                    <div class="modal-buttons">
-                      <button class="cancel-button" type="button">
-                        Cancel
-                      </button>
-                      <button
-                        class="submit-button"
-                        type="button"
-                        form="user-name-form"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </h1>
             </div>
           </div>
@@ -89,41 +44,65 @@
     </header>
     <main>
       <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="local-info">
-              <h1 class="time">00:00</h1>
-              <h3 class="date">2021.07.14 WED</h3>
-              <p class="weather">weather of today</p>
+        <div class="main-slider">
+          <div class="slider-1">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="local-info">
+                  <h1 class="time">00:00</h1>
+                  <h3 class="date">2021.07.14 WED</h3>
+                  <p class="weather">weather of today</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="d-day">
-              <button class="d-day-setting-button" type="button">
-                <h1 class="d-day-letter">Set Your <br />D-day</h1>
-              </button>
+          <div class="slider-2">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="d-day">
+                  <button class="d-day-setting-btn" type="button">
+                    <h1 class="d-day-letter">Set Your <br />D-day</h1>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <div class="modal d-day-modal">
-                <div class="modal-contents">
-                  <form action="" method="POST" id="d-day-form">
-                    <label for="d-day-input" class="visually-hidden"
-                      >User Image</label
-                    >
-                    <input id="d-day-input" type="date" accept=".png, .jpg" />
-                  </form>
-                  <div class="modal-buttons">
-                    <button class="cancel-button" type="button">Cancel</button>
-                    <button
-                      class="submit-button"
-                      type="button"
-                      form="user-img-form"
-                    >
-                      Submit
+          <div class="slider-3">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="todo">
+                  <header class="todo-header">
+                    <h1 class="todo-title">TO DO</h1>
+                    <button class="todo-add-btn" type="button">
+                      <img src="./assets/todo-add.png" />
                     </button>
-                  </div>
+                  </header>
+
+                  <ul class="todo-list">
+                    <li class="todo-item-1 is-active">
+                      <button class="todo-done-btn" aria-label="clear to do">
+                        <img src="./assets/todo-default.png" class="default" />
+                        <img src="./assets/todo-done.png" class="done" />
+                        <span class="todo-content">todo sample 1</span>
+                      </button>
+                      <button class="todo-delete-btn" aria-label="delete to do">
+                        <img src="./assets/todo-delete.png" />
+                      </button>
+                    </li>
+
+                    <li class="todo-item-2">
+                      <button class="todo-done-btn" aria-label="clear to do">
+                        <img src="./assets/todo-default.png" class="default" />
+                        <img src="./assets/todo-done.png" class="done" />
+                        <span class="todo-content">todo sample 2</span>
+                      </button>
+                      <button class="todo-delete-btn" aria-label="delete to do">
+                        <img src="./assets/todo-delete.png" />
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -132,69 +111,101 @@
 
         <div class="row">
           <div class="col-sm-4">
-            <div class="todo">
-              <header class="todo-header">
-                <h1 class="todo-title">TO DO</h1>
-                <button class="todo-add-btn" type="button">
-                  <img src="./assets/todo-add.png" />
-                </button>
-
-                <div class="modal todo-modal">
-                  <div class="modal-contents">
-                    <form action="" method="POST" id="todo-form">
-                      <label for="todo-form" class="visually-hidden"
-                        >TO DO</label
-                      >
-                      <input type="text" placeholder="What's your todo?" />
-                    </form>
-
-                    <div class="modal-buttons">
-                      <button class="cancel-button" type="button">
-                        Cancel
-                      </button>
-                      <button
-                        class="submit-button"
-                        type="button"
-                        form="user-name-form"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </header>
-
-              <ul class="todo-list">
-                <li class="todo-item is-active">
-                  <button class="todo-done-btn" aria-label="clear to do">
-                    <img src="./assets/todo-default.png" class="default" />
-                    <img src="./assets/todo-done.png" class="done" />
-                    <span class="todo-content">todo sample 1</span>
-                  </button>
-                  <button class="todo-delete-btn" aria-label="delete to do">
-                    <img src="./assets/todo-delete.png" />
-                  </button>
+            <div class="slider-nav">
+              <ol class="slider-nav-list">
+                <li class="slider-nav-item">
+                  <button type="button">HOME</button>
                 </li>
-
-                <li class="todo-item">
-                  <button class="todo-done-btn" aria-label="clear to do">
-                    <img src="./assets/todo-default.png" class="default" />
-                    <img src="./assets/todo-done.png" class="done" />
-                    <span class="todo-content">todo sample 2</span>
-                  </button>
-                  <button class="todo-delete-btn" aria-label="delete to do">
-                    <img src="./assets/todo-delete.png" />
-                  </button>
+                <li class="slider-nav-item">
+                  <button type="button">D-DAY</button>
                 </li>
-              </ul>
+                <li class="slider-nav-item">
+                  <button type="button">TODO</button>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
       </div>
     </main>
 
+    <div class="modals">
+      <div class="modal user-img-modal">
+        <div class="modal-contents">
+          <form action="" method="POST" id="user-img-form">
+            <label for="user-img-input" class="visually-hidden"
+              >User Image</label
+            >
+            <input id="user-img-input" type="file" accept=".png, .jpg" />
+          </form>
+          <div class="modal-buttons">
+            <button class="cancel-btn" type="button">Cancel</button>
+            <button class="submit-btn" type="button" form="user-img-form">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal user-name-modal">
+        <div class="modal-contents">
+          <form action="" method="POST" id="user-name-form">
+            <label for="user-name-input" class="visually-hidden"
+              >User Name</label
+            >
+            <input
+              id="user-name-input"
+              type="text"
+              placeholder="What's your name?"
+              maxlength="12"
+            />
+          </form>
+          <div class="modal-buttons">
+            <button class="cancel-btn" type="button">Cancel</button>
+            <button class="submit-btn" type="button" form="user-name-form">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal d-day-modal">
+        <div class="modal-contents">
+          <form action="" method="POST" id="d-day-form">
+            <label for="d-day-input" class="visually-hidden">User Image</label>
+            <input id="d-day-input" type="date" accept=".png, .jpg" />
+          </form>
+          <div class="modal-buttons">
+            <button class="cancel-btn" type="button">Cancel</button>
+            <button class="submit-btn" type="button" form="user-img-form">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal todo-modal">
+        <div class="modal-contents">
+          <form action="" method="POST" id="todo-form">
+            <label for="todo-form" class="visually-hidden">TO DO</label>
+            <input type="text" placeholder="What's your todo?" />
+          </form>
+
+          <div class="modal-buttons">
+            <button class="cancel-btn" type="button">Cancel</button>
+            <button class="submit-btn" type="button" form="user-name-form">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="overlay" aria-hidden></div>
+
     <script src="./script/userProfile.js"></script>
     <script src="./script/dday.js"></script>
+    <script src="./script/todo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="./script/mainSlider.js"></script>
   </body>
 </html>
