@@ -6,6 +6,7 @@
     @include text-weight(400);
     margin-bottom: 5px;
     font-size: 30px;
+    letter-spacing: -0.001em;
   }
 
   .date {
@@ -15,7 +16,7 @@
   }
 
   .weather {
-    @include text-style(14);
+    @include text-style(16);
     @include text-weight(400);
   }
 }

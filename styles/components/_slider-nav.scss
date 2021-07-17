@@ -1,12 +1,16 @@
 .slider-nav {
+  width: 100%;
+  height: 120px;
+
   &-list {
     @include flexbox;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 120px;
     padding: 0 20px;
+    background-color: $background;
 
     .slider-nav-item {
       margin: 0 20px;
@@ -15,11 +19,11 @@
         @include text-style(14, $primary);
         @include text-weight(400);
         display: block;
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         padding: 5px;
         background-color: $background;
-        border-radius: $modal;
+        border-radius: 13px;
         box-shadow: 5px 5px 6px #d1d4d6, -5px -5px 6px $white;
       }
 
