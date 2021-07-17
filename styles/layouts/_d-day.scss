@@ -1,8 +1,11 @@
+$d-day-size: 170px;
+$d-day-margin-size: 30px;
+
 .d-day {
   @include flexbox;
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: $d-day-size;
+  height: $d-day-size;
   margin: 30px auto;
   background-color: $background;
   border-radius: $circle;
@@ -32,8 +35,8 @@
   position: absolute;
   z-index: $pseudo-level;
   display: block;
-  width: 240px;
-  height: 240px;
+  width: $d-day-size + $d-day-margin-size;
+  height: $d-day-size + $d-day-margin-size;
   background-color: $background;
   border-radius: $circle;
   content: '';

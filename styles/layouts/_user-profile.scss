@@ -1,9 +1,12 @@
+$avatar-size: 35px;
+$avatar-margin-size: 10px;
+
 .user-profile {
-  @include flexbox(between);
-  padding: 10px 10px;
+  @include flexbox(start);
+  padding: 10px 0;
 
   &-greeting {
-    @include text-style(22);
+    @include text-style(18);
     @include text-weight(400);
 
     .user-name-change-btn {
@@ -23,17 +26,18 @@
     .user-img-change-btn {
       position: relative;
       display: block;
-      width: 55px;
-      height: 55px;
+      width: $avatar-size + $avatar-margin-size;
+      height: $avatar-size + $avatar-margin-size;
       padding: 0;
+      margin-right: 15px;
       background-color: #f3f6f9;
       border-radius: $circle;
       box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px $white;
 
       .avatar {
         @include pos-center(center);
-        width: 40px;
-        height: 40px;
+        width: $avatar-size;
+        height: $avatar-size;
         overflow: hidden;
         border-radius: $circle;
 
