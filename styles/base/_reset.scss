@@ -2,18 +2,19 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'NEXON Lv1 Gothic OTF Light', sans-serif;
+  font-family: 'GmarketSansMedium', sans-serif;
   margin: 0;
 }
 
 html {
-  font-family: 'NEXON Lv1 Gothic OTF Light', sans-serif;
+  font-family: 'GmarketSansMedium', sans-serif;
 }
 
 body {
-  font-family: 'NEXON Lv1 Gothic OTF Light', sans-serif;
+  font-family: 'GmarketSansMedium', sans-serif;
   color: $primary;
   background-color: $background;
+  overflow: hidden;
 }
 
 h1 {
