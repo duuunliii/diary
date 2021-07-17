@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'NEXON Lv1 Gothic OTF Light';
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff") format("woff");
+  font-family: 'GmarketSansLight';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'NEXON Lv1 Gothic OTF';
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff") format("woff");
+  font-family: 'GmarketSansMedium';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'NEXON Lv1 Gothic OTF Bold';
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff") format("woff");
+  font-family: 'GmarketSansBold';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -323,16 +323,17 @@ template {
 
 * {
   box-sizing: border-box;
-  font-family: 'NEXON Lv1 Gothic OTF Light', sans-serif;
+  font-family: 'GmarketSansMedium', sans-serif;
   margin: 0; }
 
 html {
-  font-family: 'NEXON Lv1 Gothic OTF Light', sans-serif; }
+  font-family: 'GmarketSansMedium', sans-serif; }
 
 body {
-  font-family: 'NEXON Lv1 Gothic OTF Light', sans-serif;
+  font-family: 'GmarketSansMedium', sans-serif;
   color: #7d7c7c;
-  background-color: #f3f6f9; }
+  background-color: #f3f6f9;
+  overflow: hidden; }
 
 h1 {
   margin: 0; }
@@ -402,36 +403,40 @@ ol {
   .lg-hidden {
     display: none !important; } }
 
-.slider-nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+.slider-nav {
   width: 100%;
-  height: 100px;
-  padding: 0 20px; }
-  .slider-nav-list .slider-nav-item {
-    margin: 0 20px; }
-    .slider-nav-list .slider-nav-item button {
-      font-size: 14px;
-      line-height: 24px;
-      letter-spacing: -0.01em;
-      color: #7d7c7c;
-      font-family: "NEXON Lv1 Gothic OTF";
-      display: block;
-      width: 60px;
-      height: 60px;
-      padding: 5px;
-      background-color: #f3f6f9;
-      border-radius: 10px;
-      box-shadow: 5px 5px 6px #d1d4d6, -5px -5px 6px #fff; }
-    .slider-nav-list .slider-nav-item.tns-nav-active button {
-      font-family: "NEXON Lv1 Gothic OTF Bold";
-      box-shadow: inset 5px 5px 6px #d1d4d6, inset -5px -5px 6px #fff; }
-    .slider-nav-list .slider-nav-item:focus {
-      outline: none; }
+  height: 120px; }
+  .slider-nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    padding: 0 20px;
+    background-color: #f3f6f9; }
+    .slider-nav-list .slider-nav-item {
+      margin: 0 20px; }
+      .slider-nav-list .slider-nav-item button {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+        color: #7d7c7c;
+        font-family: "GmarketSansMedium";
+        display: block;
+        width: 65px;
+        height: 65px;
+        padding: 5px;
+        background-color: #f3f6f9;
+        border-radius: 13px;
+        box-shadow: 5px 5px 6px #d1d4d6, -5px -5px 6px #fff; }
+      .slider-nav-list .slider-nav-item.tns-nav-active button {
+        font-family: "GmarketSansBold";
+        box-shadow: inset 5px 5px 6px #d1d4d6, inset -5px -5px 6px #fff; }
+      .slider-nav-list .slider-nav-item:focus {
+        outline: none; }
 
 .modal {
   position: fixed;
@@ -462,7 +467,7 @@ ol {
         line-height: 24px;
         letter-spacing: -0.01em;
         color: #7d7c7c;
-        font-family: "NEXON Lv1 Gothic OTF Bold";
+        font-family: "GmarketSansBold";
         width: 100%;
         padding: 8px 12px;
         background-color: #f3f6f9;
@@ -473,7 +478,7 @@ ol {
     line-height: 24px;
     letter-spacing: -0.01em;
     color: #7d7c7c;
-    font-family: "NEXON Lv1 Gothic OTF Bold";
+    font-family: "GmarketSansBold";
     margin: 0 20px;
     transition: text-shadow 200ms ease-in-out; }
     .modal-buttons button:hover {
@@ -568,67 +573,80 @@ ol {
       .container .col-lg-12 {
         width: 1140px; } }
 
+.global-header {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px; }
+
 .user-profile {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px 0; }
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  padding: 20px 20px;
+  background-color: #f3f6f9; }
   .user-profile-greeting {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    font-family: "NEXON Lv1 Gothic OTF"; }
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -0.001em;
+    font-family: "GmarketSansMedium"; }
     .user-profile-greeting .user-name-change-btn .user-name {
-      font-family: "NEXON Lv1 Gothic OTF Bold";
+      font-family: "GmarketSansBold";
       color: #7d7c7c;
       transition: text-shadow 200ms ease-in-out; }
       .user-profile-greeting .user-name-change-btn .user-name:hover {
         text-shadow: 2px 2px 2px #c2c5c7; }
-  .user-profile-img .user-img-change-btn {
-    position: relative;
-    display: block;
-    width: 45px;
-    height: 45px;
-    padding: 0;
-    margin-right: 15px;
-    background-color: #f3f6f9;
-    border-radius: 50%;
-    box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px #fff; }
-    .user-profile-img .user-img-change-btn .avatar {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 35px;
-      height: 35px;
-      overflow: hidden;
-      border-radius: 50%; }
-      .user-profile-img .user-img-change-btn .avatar img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; }
-    .user-profile-img .user-img-change-btn:active {
-      box-shadow: inset 5px 5px 5px #cfd1d4, inset -5px -5px 5px #fff; }
+  .user-profile-img {
+    margin-right: 20px; }
+    .user-profile-img .user-img-change-btn {
+      position: relative;
+      display: block;
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      background-color: #f3f6f9;
+      border-radius: 50%;
+      box-shadow: 5px 5px 3px #cacccf, -5px -5px 3px #fff; }
+      .user-profile-img .user-img-change-btn .avatar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 35px;
+        height: 35px;
+        overflow: hidden;
+        border-radius: 50%; }
+        .user-profile-img .user-img-change-btn .avatar img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+      .user-profile-img .user-img-change-btn:active {
+        box-shadow: inset 5px 5px 5px #cfd1d4, inset -5px -5px 5px #fff; }
 
 .local-info {
   padding: 15px 0;
   text-align: center; }
   .local-info .time {
-    font-family: "NEXON Lv1 Gothic OTF";
+    font-family: "GmarketSansMedium";
     margin-bottom: 5px;
-    font-size: 30px; }
+    font-size: 30px;
+    letter-spacing: -0.001em; }
   .local-info .date {
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.01em;
-    font-family: "NEXON Lv1 Gothic OTF";
+    font-family: "GmarketSansMedium";
     margin-bottom: 5px; }
   .local-info .weather {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    font-family: "NEXON Lv1 Gothic OTF"; }
+    font-family: "GmarketSansMedium"; }
 
 .d-day {
   display: flex;
@@ -652,7 +670,7 @@ ol {
     line-height: 26px;
     letter-spacing: -0.01em;
     color: #7d7c7c;
-    font-family: "NEXON Lv1 Gothic OTF";
+    font-family: "GmarketSansMedium";
     text-align: center;
     transition: text-shadow 200ms ease-in-out; }
 
@@ -686,7 +704,7 @@ ol {
     line-height: 26px;
     letter-spacing: -0.01em;
     color: #7d7c7c;
-    font-family: "NEXON Lv1 Gothic OTF"; }
+    font-family: "GmarketSansMedium"; }
   .todo-add-btn {
     position: absolute;
     top: 0;
