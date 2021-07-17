@@ -1,5 +1,5 @@
 $d-day-size: 170px;
-$d-day-margin-size: 30px;
+$d-day-margin-size: 40px;
 
 .d-day {
   @include flexbox;
@@ -11,7 +11,7 @@ $d-day-margin-size: 30px;
   border-radius: $circle;
   box-shadow: 5px 5px 10px #bbbdc0, -5px -5px 10px $white;
 
-  &-setting-button {
+  &-setting-btn {
     width: 100%;
     height: 100%;
     border-radius: $circle;
@@ -40,5 +40,5 @@ $d-day-margin-size: 30px;
   background-color: $background;
   border-radius: $circle;
   content: '';
-  box-shadow: 33px 33px 65px #e7eaed, -33px -33px 65px $white;
+  box-shadow: inset 2px 2px 5px #bbbdc0, inset -2px -2px 5px $white;
 }
