@@ -1,0 +1,95 @@
+$todo-btn-size: 15px;
+
+.todo {
+  width: 100%;
+  padding: 5px 15px;
+  background-color: $background;
+  border-radius: $rect;
+  box-shadow: 9px 9px 16px #b4b6b8, -9px -9px 16px $white;
+
+  &-header {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &-title {
+    @include text-style(18, $primary);
+    @include text-weight(400);
+  }
+
+  &-add-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: block;
+    width: 38px;
+    height: 38px;
+    padding: 10px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-list {
+    .todo-item {
+      @include flexbox(between);
+      margin-bottom: 10px;
+
+      .todo-done-btn {
+        @include flexbox(start);
+        text-align: left;
+
+        img {
+          width: $todo-btn-size;
+          height: $todo-btn-size;
+          margin-right: 20px;
+
+          &.default {
+            display: inline-block;
+          }
+
+          &.done {
+            display: none;
+          }
+        }
+
+        .todo-content {
+          @include text-style(16, $primary);
+        }
+      }
+
+      .todo-delete-btn {
+        img {
+          width: $todo-btn-size;
+          height: $todo-btn-size;
+        }
+      }
+
+      &.is-active {
+        .todo-done-btn {
+          img {
+            &.default {
+              display: none;
+            }
+
+            &.done {
+              display: inline-block;
+            }
+          }
+
+          .todo-content {
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}
