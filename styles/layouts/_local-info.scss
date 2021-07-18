@@ -2,11 +2,20 @@
   padding: 15px 0;
   text-align: center;
 
-  .time {
-    @include text-weight(400);
-    margin-bottom: 5px;
-    font-size: 30px;
-    letter-spacing: -0.001em;
+  .total-time {
+    @include flexbox;
+
+    .ampm {
+      @include text-style(18);
+      margin-left: 8px;
+    }
+
+    .time {
+      @include text-weight(400);
+      margin-bottom: 5px;
+      font-size: 30px;
+      letter-spacing: -0.001em;
+    }
   }
 
   .date {
