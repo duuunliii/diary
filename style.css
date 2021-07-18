@@ -645,11 +645,20 @@ ol {
 .local-info {
   padding: 15px 0;
   text-align: center; }
-  .local-info .time {
-    font-family: "GmarketSansMedium";
-    margin-bottom: 5px;
-    font-size: 30px;
-    letter-spacing: -0.001em; }
+  .local-info .total-time {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .local-info .total-time .ampm {
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.01em;
+      margin-left: 8px; }
+    .local-info .total-time .time {
+      font-family: "GmarketSansMedium";
+      margin-bottom: 5px;
+      font-size: 30px;
+      letter-spacing: -0.001em; }
   .local-info .date {
     font-size: 18px;
     line-height: 26px;
