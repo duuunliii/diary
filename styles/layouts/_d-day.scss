@@ -96,13 +96,14 @@ $d-day-margin-size: 40px;
       border-radius: 13px;
       box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px $white;
 
-      .d-day-modify-btn {
+      .d-day-name-btn {
+        @include text-style(16, $primary);
         display: inline-block;
-        width: 80%;
+        width: 75%;
         text-align: left;
 
-        .d-day-name {
-          @include text-style(16, $primary);
+        .input-date {
+          font-size: 12px;
         }
       }
 
@@ -110,7 +111,7 @@ $d-day-margin-size: 40px;
         @include text-style(16, $primary);
         @include text-weight(700);
         display: inline-block;
-        width: 20%;
+        width: 25%;
         text-align: center;
       }
 
@@ -131,6 +132,7 @@ $d-day-margin-size: 40px;
           width: 70%;
           height: 50%;
           margin: 0 auto;
+          content: url('../../assets/delete.png');
           object-fit: cover;
         }
       }

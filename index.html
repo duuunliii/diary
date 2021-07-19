@@ -80,23 +80,7 @@
                       </button>
                     </header>
 
-                    <ul class="d-day-list">
-                      <li class="d-day-item">
-                        <button
-                          class="d-day-modify-btn"
-                          aria-label="modify d-day"
-                        >
-                          <span class="d-day-name">d-day sample</span>
-                        </button>
-                        <h3 class="d-day-date">D-31</h3>
-                        <button
-                          class="d-day-delete-btn"
-                          aria-label="delete d-day"
-                        >
-                          <img src="./assets/delete.png" />
-                        </button>
-                      </li>
-                    </ul>
+                    <ul class="d-day-list"></ul>
                   </div>
                 </div>
               </div>
@@ -205,12 +189,12 @@
           <form action="" method="POST" id="d-day-form">
             <label for="d-day-input" class="visually-hidden">D-day</label>
             <input
-              id="d-day-input"
+              id="d-day-name-input"
               type="text"
               placeholder="D-day name"
               maxlength="10"
             />
-            <input id="d-day-input" type="date" />
+            <input id="d-day-date-input" type="date" />
           </form>
           <div class="modal-buttons">
             <button class="cancel-btn" type="button">Cancel</button>
