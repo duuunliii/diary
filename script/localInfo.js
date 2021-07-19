@@ -13,7 +13,9 @@ function getTime() {
   let minutes = myDate.getMinutes()
 
   time.innerHTML = `${
-    hours < 10
+    hours == 0
+      ? '12'
+      : hours < 10
       ? `0${hours}`
       : hours > 12
       ? `${hours % 12 < 10 ? `0${hours % 12}` : hours % 12}`
