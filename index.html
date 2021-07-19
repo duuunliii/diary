@@ -68,9 +68,36 @@
             <div class="row">
               <div class="col-sm-4">
                 <div class="d-day">
-                  <button class="d-day-setting-btn" type="button">
-                    <h1 class="d-day-letter">Set Your <br />D-day</h1>
-                  </button>
+                  <!-- <div class="d-day-main">
+                    <h1 class="main">D-day</h1>
+                  </div> -->
+
+                  <div class="d-day-container">
+                    <header class="d-day-container-header">
+                      <h1 class="d-day-title">D-DAY</h1>
+                      <button class="d-day-add-btn" type="button">
+                        <img src="./assets/add.png" />
+                      </button>
+                    </header>
+
+                    <ul class="d-day-list">
+                      <li class="d-day-item">
+                        <button
+                          class="d-day-modify-btn"
+                          aria-label="modify d-day"
+                        >
+                          <span class="d-day-name">d-day sample</span>
+                        </button>
+                        <h3 class="d-day-date">D-31</h3>
+                        <button
+                          class="d-day-delete-btn"
+                          aria-label="delete d-day"
+                        >
+                          <img src="./assets/delete.png" />
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -80,36 +107,33 @@
             <div class="row">
               <div class="col-sm-4">
                 <div class="todo">
-                  <header class="todo-header">
-                    <h1 class="todo-title">TO DO</h1>
-                    <button class="todo-add-btn" type="button">
-                      <img src="./assets/todo-add.png" />
-                    </button>
-                  </header>
+                  <div class="todo-container">
+                    <header class="todo-container-header">
+                      <h1 class="todo-title">TO DO</h1>
+                      <button class="todo-add-btn" type="button">
+                        <img src="./assets/add.png" />
+                      </button>
+                    </header>
 
-                  <ul class="todo-list">
-                    <li class="todo-item-1 is-active">
-                      <button class="todo-done-btn" aria-label="clear to do">
-                        <img src="./assets/todo-default.png" class="default" />
-                        <img src="./assets/todo-done.png" class="done" />
-                        <span class="todo-content">todo sample 1</span>
-                      </button>
-                      <button class="todo-delete-btn" aria-label="delete to do">
-                        <img src="./assets/todo-delete.png" />
-                      </button>
-                    </li>
-
-                    <li class="todo-item-2">
-                      <button class="todo-done-btn" aria-label="clear to do">
-                        <img src="./assets/todo-default.png" class="default" />
-                        <img src="./assets/todo-done.png" class="done" />
-                        <span class="todo-content">todo sample 2</span>
-                      </button>
-                      <button class="todo-delete-btn" aria-label="delete to do">
-                        <img src="./assets/todo-delete.png" />
-                      </button>
-                    </li>
-                  </ul>
+                    <ul class="todo-list">
+                      <li class="todo-item is-active">
+                        <button class="todo-done-btn" aria-label="clear to do">
+                          <img
+                            src="./assets/todo-default.png"
+                            class="default"
+                          />
+                          <img src="./assets/todo-done.png" class="done" />
+                          <span class="todo-content">todo sample 1</span>
+                        </button>
+                        <button
+                          class="todo-delete-btn"
+                          aria-label="delete to do"
+                        >
+                          <img src="./assets/delete.png" />
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,8 +203,14 @@
       <div class="modal d-day-modal">
         <div class="modal-contents">
           <form action="" method="POST" id="d-day-form">
-            <label for="d-day-input" class="visually-hidden">User Image</label>
-            <input id="d-day-input" type="date" accept=".png, .jpg" />
+            <label for="d-day-input" class="visually-hidden">D-day</label>
+            <input
+              id="d-day-input"
+              type="text"
+              placeholder="D-day name"
+              maxlength="10"
+            />
+            <input id="d-day-input" type="date" />
           </form>
           <div class="modal-buttons">
             <button class="cancel-btn" type="button">Cancel</button>
@@ -211,8 +241,8 @@
 
     <script src="./script/userProfile.js"></script>
     <script src="./script/localInfo.js"></script>
-    <!-- <script src="./script/dday.js"></script>
-    <script src="./script/todo.js"></script> -->
+    <script src="./script/dday.js"></script>
+    <!-- <script src="./script/todo.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="./script/mainSlider.js"></script>
   </body>
