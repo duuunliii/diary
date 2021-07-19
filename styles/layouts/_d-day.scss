@@ -2,43 +2,138 @@ $d-day-size: 170px;
 $d-day-margin-size: 40px;
 
 .d-day {
-  @include flexbox;
-  position: relative;
-  width: $d-day-size;
-  height: $d-day-size;
-  margin: 30px auto 30px auto;
-  background-color: $background;
-  border-radius: $circle;
-  box-shadow: 5px 5px 10px #bbbdc0, -5px -5px 10px $white;
+  $container-top-margin: 20px;
+  $container-bottom-margin: 30px;
 
-  &-setting-btn {
-    width: 100%;
-    height: 100%;
+  &-main {
+    @include flexbox;
+    position: relative;
+    width: $d-day-size;
+    height: $d-day-size;
+    margin: 30px auto 30px auto;
+    background-color: $background;
     border-radius: $circle;
+    box-shadow: 5px 5px 10px #bbbdc0, -5px -5px 10px $white;
 
-    &:hover {
-      .d-day-letter {
-        text-shadow: $text-shadow;
+    .main {
+      @include text-style(18, $primary);
+      @include text-weight(400);
+      text-align: center;
+      transition: text-shadow 200ms ease-in-out;
+    }
+
+    &::before {
+      position: absolute;
+      z-index: $pseudo-level;
+      display: block;
+      width: $d-day-size + $d-day-margin-size;
+      height: $d-day-size + $d-day-margin-size;
+      background-color: $background;
+      border-radius: $circle;
+      content: '';
+      box-shadow: inset 2px 2px 5px #bbbdc0, inset -2px -2px 5px $white;
+    }
+  }
+
+  &-container {
+    width: 92%;
+    max-height: calc(
+      #{$sm-main-height} - #{$container-top-margin + $container-bottom-margin}
+    );
+    padding: 5px 20px;
+    margin: $container-top-margin auto $container-bottom-margin auto;
+    overflow: scroll;
+    background-color: $background;
+    border-radius: $rect;
+    box-shadow: inset 5px 5px 10px #b4b6b8, inset -5px -5px 10px $white;
+
+    &-header {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      padding: 8px 10px;
+      margin-bottom: 20px;
+      text-align: center;
+
+      .d-day-title {
+        @include text-style(18, $primary);
+        @include text-weight(400);
+      }
+
+      .d-day-add-btn {
+        position: absolute;
+        top: 0;
+        right: -10px;
+        display: block;
+        width: 38px;
+        height: 38px;
+        padding: 10px;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          transition: transform 200ms ease-in-out;
+          object-fit: cover;
+        }
+
+        :hover {
+          transform: rotate(90deg);
+        }
       }
     }
   }
 
-  &-letter {
-    @include text-style(18, $primary);
-    @include text-weight(400);
-    text-align: center;
-    transition: text-shadow 200ms ease-in-out;
-  }
-}
+  &-list {
+    .d-day-item {
+      @include flexbox(between);
+      position: relative;
+      width: 100%;
+      height: 70px;
+      padding: 0 10px;
+      margin-bottom: 20px;
+      background-color: $background;
+      border-radius: 13px;
+      box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px $white;
 
-.d-day::before {
-  position: absolute;
-  z-index: $pseudo-level;
-  display: block;
-  width: $d-day-size + $d-day-margin-size;
-  height: $d-day-size + $d-day-margin-size;
-  background-color: $background;
-  border-radius: $circle;
-  content: '';
-  box-shadow: inset 2px 2px 5px #bbbdc0, inset -2px -2px 5px $white;
+      .d-day-modify-btn {
+        display: inline-block;
+        width: 80%;
+        text-align: left;
+
+        .d-day-name {
+          @include text-style(16, $primary);
+        }
+      }
+
+      .d-day-date {
+        @include text-style(16, $primary);
+        @include text-weight(700);
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+      }
+
+      .d-day-delete-btn {
+        position: absolute;
+        top: -10px;
+        right: -8px;
+        display: block;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        background-color: $background;
+        border-radius: $circle;
+        box-shadow: 2px 2px 4px #c2c5c7, -2px -2px 4px $white;
+
+        img {
+          display: block;
+          width: 70%;
+          height: 50%;
+          margin: 0 auto;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }
