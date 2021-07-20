@@ -124,17 +124,12 @@ $d-day-margin-size: 40px;
         height: 22px;
         padding: 0;
         background-color: $background;
+        background-image: url('../../assets/delete.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 70% 70%;
         border-radius: $circle;
         box-shadow: 2px 2px 4px #c2c5c7, -2px -2px 4px $white;
-
-        img {
-          display: block;
-          width: 70%;
-          height: 50%;
-          margin: 0 auto;
-          content: url('../../assets/delete.png');
-          object-fit: cover;
-        }
       }
     }
   }
