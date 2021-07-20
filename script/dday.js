@@ -54,7 +54,6 @@ function paintDday(name, date) {
   const inputDate = document.createElement('p')
   const dday = document.createElement('h3')
   const deleteBtn = document.createElement('button')
-  const deleteBtnImg = document.createElement('img')
   newID++
 
   li.classList.add(LI_CLASS)
@@ -67,7 +66,8 @@ function paintDday(name, date) {
   inputDate.innerText = date
   dday.innerText = calcDday(date)
 
-  deleteBtn.appendChild(deleteBtnImg)
+  deleteBtn.addEventListener('click', deleteDday)
+
   li.appendChild(nameBtn)
   nameBtn.appendChild(inputDate)
   li.appendChild(dday)
@@ -82,6 +82,21 @@ function paintDday(name, date) {
   }
 
   ddayArray.push(ddayObj)
+  saveDday()
+}
+
+function deleteDday(event) {
+  const btn = event.target
+  const li = btn.parentNode
+
+  //html
+  ddayList.removeChild(li)
+
+  //local storage
+  const cleanedArray = ddayArray.filter(function (dday) {
+    return dday.id !== parseInt(li.id)
+  })
+  ddayArray = cleanedArray
   saveDday()
 }
 
