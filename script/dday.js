@@ -34,7 +34,7 @@ function saveDday() {
 function calcDday(date) {
   let currentDate = new Date()
   let dateObj = new Date(date)
-  let timeDiff = Math.floor((dateObj - currentDate) / 1000 / 60 / 60 / 24) * -1
+  let timeDiff = Math.floor((currentDate - dateObj) / 1000 / 60 / 60 / 24)
   let result = ''
 
   if (timeDiff > 0) {
