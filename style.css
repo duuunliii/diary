@@ -410,7 +410,7 @@ ol {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 120px;
+  height: 100px;
   padding: 0 20px;
   background-color: #f3f6f9; }
   .slider-nav-list {
@@ -470,6 +470,7 @@ ol {
         font-family: "GmarketSansBold";
         width: 100%;
         padding: 8px 12px;
+        margin-bottom: 10px;
         background-color: #f3f6f9;
         border-radius: 7px;
         box-shadow: inset 5px 5px 5px #e2e5e8, inset -5px -5px 5px #fff; }
@@ -574,20 +575,20 @@ ol {
         width: 1140px; } }
 
 .slider-1 {
-  max-height: calc(100vh - 220px);
+  max-height: calc(100vh - 180px);
   overflow: scroll; }
 
 .slider-2 {
-  max-height: calc(100vh - 220px);
+  max-height: calc(100vh - 180px);
   overflow: scroll; }
 
 .slider-3 {
-  max-height: calc(100vh - 220px);
+  max-height: calc(100vh - 180px);
   overflow: scroll; }
 
 .global-header {
   width: 100%;
-  height: 100px; }
+  height: 80px; }
   .global-header .user-profile {
     display: flex;
     align-items: center;
@@ -596,8 +597,8 @@ ol {
     top: 0;
     right: 0;
     width: 100%;
-    height: 100px;
-    padding: 20px 20px;
+    height: 80px;
+    padding: 0 20px 0 20px;
     background-color: #f3f6f9; }
     .global-header .user-profile-greeting {
       font-size: 22px;
@@ -671,7 +672,7 @@ ol {
     letter-spacing: -0.01em;
     font-family: "GmarketSansMedium"; }
 
-.d-day {
+.d-day-main {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -682,13 +683,7 @@ ol {
   background-color: #f3f6f9;
   border-radius: 50%;
   box-shadow: 5px 5px 10px #bbbdc0, -5px -5px 10px #fff; }
-  .d-day-setting-btn {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; }
-    .d-day-setting-btn:hover .d-day-letter {
-      text-shadow: 2px 2px 2px #c2c5c7; }
-  .d-day-letter {
+  .d-day-main .main {
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.01em;
@@ -696,82 +691,176 @@ ol {
     font-family: "GmarketSansMedium";
     text-align: center;
     transition: text-shadow 200ms ease-in-out; }
+  .d-day-main::before {
+    position: absolute;
+    z-index: -50;
+    display: block;
+    width: 210px;
+    height: 210px;
+    background-color: #f3f6f9;
+    border-radius: 50%;
+    content: '';
+    box-shadow: inset 2px 2px 5px #bbbdc0, inset -2px -2px 5px #fff; }
 
-.d-day::before {
-  position: absolute;
-  z-index: -50;
-  display: block;
-  width: 210px;
-  height: 210px;
-  background-color: #f3f6f9;
-  border-radius: 50%;
-  content: '';
-  box-shadow: inset 2px 2px 5px #bbbdc0, inset -2px -2px 5px #fff; }
-
-.todo {
+.d-day-container {
   width: 92%;
-  padding: 5px 15px;
-  margin: 30px auto 30px auto;
+  max-height: calc( calc(100vh - 180px) - 50px);
+  padding: 5px 20px;
+  margin: 20px auto 30px auto;
+  overflow: scroll;
   background-color: #f3f6f9;
   border-radius: 20px;
-  box-shadow: 9px 9px 16px #b4b6b8, -9px -9px 16px #fff; }
-  .todo-header {
+  box-shadow: inset 5px 5px 10px #b4b6b8, inset -5px -5px 10px #fff; }
+  .d-day-container-header {
     position: relative;
     width: 100%;
     height: 40px;
     padding: 8px 10px;
     margin-bottom: 20px;
     text-align: center; }
-  .todo-title {
-    font-size: 18px;
-    line-height: 26px;
+    .d-day-container-header .d-day-title {
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.01em;
+      color: #7d7c7c;
+      font-family: "GmarketSansMedium"; }
+    .d-day-container-header .d-day-add-btn {
+      position: absolute;
+      top: 0;
+      right: -10px;
+      display: block;
+      width: 38px;
+      height: 38px;
+      padding: 10px; }
+      .d-day-container-header .d-day-add-btn img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: transform 200ms ease-in-out;
+        object-fit: cover; }
+      .d-day-container-header .d-day-add-btn :hover {
+        transform: rotate(90deg); }
+
+.d-day-list .d-day-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  background-color: #f3f6f9;
+  border-radius: 13px;
+  box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px #fff; }
+  .d-day-list .d-day-item .d-day-name-btn {
+    display: inline-block;
+    width: 75%;
+    text-align: left; }
+    .d-day-list .d-day-item .d-day-name-btn .input-name {
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.01em;
+      color: #7d7c7c;
+      margin-bottom: 2px; }
+    .d-day-list .d-day-item .d-day-name-btn .input-date {
+      font-size: 11px;
+      color: #7d7c7c; }
+  .d-day-list .d-day-item .d-day-date {
+    font-size: 16px;
+    line-height: 24px;
     letter-spacing: -0.01em;
     color: #7d7c7c;
-    font-family: "GmarketSansMedium"; }
-  .todo-add-btn {
+    font-family: "GmarketSansBold";
+    display: inline-block;
+    width: 25%;
+    text-align: center; }
+  .d-day-list .d-day-item .d-day-delete-btn {
     position: absolute;
-    top: 0;
-    right: 10px;
+    top: -10px;
+    right: -8px;
     display: block;
-    width: 38px;
-    height: 38px;
-    padding: 10px; }
-    .todo-add-btn img {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    background-color: #f3f6f9;
+    background-image: url("../../assets/delete.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 70% 70%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px #c2c5c7, -2px -2px 4px #fff; }
+
+.todo-container {
+  width: 92%;
+  max-height: calc( calc(100vh - 180px) - 50px);
+  padding: 5px 15px;
+  margin: 20px auto 30px auto;
+  overflow: scroll;
+  background-color: #f3f6f9;
+  border-radius: 20px;
+  box-shadow: 9px 9px 16px #b4b6b8, -9px -9px 16px #fff; }
+  .todo-container-header {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    text-align: center; }
+    .todo-container-header .todo-title {
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.01em;
+      color: #7d7c7c;
+      font-family: "GmarketSansMedium"; }
+    .todo-container-header .todo-add-btn {
+      position: absolute;
+      top: 0;
+      right: -10px;
       display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
-  .todo-list [class^='todo-item-'] {
+      width: 38px;
+      height: 38px;
+      padding: 10px; }
+      .todo-container-header .todo-add-btn img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: transform 200ms ease-in-out;
+        object-fit: cover; }
+      .todo-container-header .todo-add-btn :hover {
+        transform: rotate(90deg); }
+
+.todo-list .todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px; }
+  .todo-list .todo-item .todo-done-btn {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px; }
-    .todo-list [class^='todo-item-'] .todo-done-btn {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: left; }
-      .todo-list [class^='todo-item-'] .todo-done-btn img {
-        width: 15px;
-        height: 15px;
-        margin-right: 20px; }
-        .todo-list [class^='todo-item-'] .todo-done-btn img.default {
-          display: inline-block; }
-        .todo-list [class^='todo-item-'] .todo-done-btn img.done {
-          display: none; }
-      .todo-list [class^='todo-item-'] .todo-done-btn .todo-content {
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.01em;
-        color: #7d7c7c; }
-    .todo-list [class^='todo-item-'] .todo-delete-btn img {
+    justify-content: flex-start;
+    text-align: left; }
+    .todo-list .todo-item .todo-done-btn img {
       width: 15px;
-      height: 15px; }
-    .todo-list [class^='todo-item-'].is-active .todo-done-btn img.default {
-      display: none; }
-    .todo-list [class^='todo-item-'].is-active .todo-done-btn img.done {
-      display: inline-block; }
-    .todo-list [class^='todo-item-'].is-active .todo-done-btn .todo-content {
-      text-decoration: line-through; }
+      height: 15px;
+      margin-right: 20px; }
+      .todo-list .todo-item .todo-done-btn img.default {
+        display: inline-block; }
+      .todo-list .todo-item .todo-done-btn img.done {
+        display: none; }
+    .todo-list .todo-item .todo-done-btn .todo-content {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      color: #7d7c7c; }
+  .todo-list .todo-item .todo-delete-btn img {
+    width: 15px;
+    height: 15px; }
+  .todo-list .todo-item.is-active .todo-done-btn img.default {
+    display: none; }
+  .todo-list .todo-item.is-active .todo-done-btn img.done {
+    display: inline-block; }
+  .todo-list .todo-item.is-active .todo-done-btn .todo-content {
+    text-decoration: line-through; }
 
 /*# sourceMappingURL=style.css.map */
