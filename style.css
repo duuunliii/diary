@@ -784,7 +784,7 @@ ol {
     height: 22px;
     padding: 0;
     background-color: #f3f6f9;
-    background-image: url("../../assets/delete.png");
+    background-image: url("./assets/delete.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 70% 70%;
