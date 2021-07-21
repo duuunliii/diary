@@ -97,13 +97,18 @@ $d-day-margin-size: 40px;
       box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px $white;
 
       .d-day-name-btn {
-        @include text-style(16, $primary);
         display: inline-block;
         width: 75%;
         text-align: left;
 
+        .input-name {
+          @include text-style(18, $primary);
+          margin-bottom: 2px;
+        }
+
         .input-date {
-          font-size: 12px;
+          font-size: 11px;
+          color: $primary;
         }
       }
 
