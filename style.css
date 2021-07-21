@@ -844,23 +844,30 @@ ol {
       width: 15px;
       height: 15px;
       margin-right: 20px; }
-      .todo-list .todo-item .todo-done-btn img.default {
+      .todo-list .todo-item .todo-done-btn img.not-done {
         display: inline-block; }
       .todo-list .todo-item .todo-done-btn img.done {
         display: none; }
-    .todo-list .todo-item .todo-done-btn .todo-content {
+    .todo-list .todo-item .todo-done-btn .todo-name {
       font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.01em;
       color: #7d7c7c; }
-  .todo-list .todo-item .todo-delete-btn img {
+  .todo-list .todo-item .todo-delete-btn {
+    display: block;
     width: 15px;
-    height: 15px; }
-  .todo-list .todo-item.is-active .todo-done-btn img.default {
+    height: 15px;
+    padding: 0;
+    background-color: #f3f6f9;
+    background-image: url("./assets/delete.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .todo-list .todo-item.is-active .todo-done-btn img.not-done {
     display: none; }
   .todo-list .todo-item.is-active .todo-done-btn img.done {
     display: inline-block; }
-  .todo-list .todo-item.is-active .todo-done-btn .todo-content {
+  .todo-list .todo-item.is-active .todo-done-btn .todo-name {
     text-decoration: line-through; }
 
 /*# sourceMappingURL=style.css.map */
