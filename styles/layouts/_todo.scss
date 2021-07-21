@@ -66,7 +66,7 @@
           height: $todo-btn-size;
           margin-right: 20px;
 
-          &.default {
+          &.not-done {
             display: inline-block;
           }
 
@@ -75,22 +75,27 @@
           }
         }
 
-        .todo-content {
+        .todo-name {
           @include text-style(16, $primary);
         }
       }
 
       .todo-delete-btn {
-        img {
-          width: $todo-btn-size;
-          height: $todo-btn-size;
-        }
+        display: block;
+        width: $todo-btn-size;
+        height: $todo-btn-size;
+        padding: 0;
+        background-color: $background;
+        background-image: url('./assets/delete.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
       &.is-active {
         .todo-done-btn {
           img {
-            &.default {
+            &.not-done {
               display: none;
             }
 
@@ -99,7 +104,7 @@
             }
           }
 
-          .todo-content {
+          .todo-name {
             text-decoration: line-through;
           }
         }
