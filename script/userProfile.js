@@ -45,9 +45,9 @@ function loadName() {
   }
 }
 
-function nameSubmit(event) {
+function submitName(evt) {
   const submitName = nameInput.value
-  event.preventDefault()
+  evt.preventDefault()
 
   if (submitName.trim() !== '') {
     deleteNameModal()
@@ -83,8 +83,8 @@ function loadImg() {
   }
 }
 
-function imgSubmit(event) {
-  event.preventDefault()
+function submitImg(evt) {
+  evt.preventDefault()
   let fr = new FileReader()
 
   if (imgInput.value !== '') {
@@ -102,12 +102,12 @@ function imgSubmit(event) {
 
 function init() {
   nameBtn.addEventListener('click', makeNameModal)
-  nameForm.addEventListener('submit', nameSubmit)
+  nameForm.addEventListener('submit', submitName)
   nameCancelBtn.addEventListener('click', deleteNameModal)
   loadName()
 
   imgBtn.addEventListener('click', makeImgModal)
-  imgForm.addEventListener('submit', imgSubmit)
+  imgForm.addEventListener('submit', submitImg)
   imgCancelBtn.addEventListener('click', deleteImgModal)
   loadImg()
 }
