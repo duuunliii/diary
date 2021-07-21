@@ -53,6 +53,8 @@ function nameSubmit(event) {
     deleteNameModal()
     paintName(submitName)
     saveName(submitName)
+  } else {
+    window.alert('사용자 이름을 입력해주세요.')
   }
 }
 
@@ -83,16 +85,19 @@ function loadImg() {
 
 function imgSubmit(event) {
   event.preventDefault()
-
   let fr = new FileReader()
 
-  fr.onload = function () {
-    paintImg(fr.result)
-    saveImg(fr.result)
-  }
-  fr.readAsDataURL(imgInput.files[0])
+  if (imgInput.value !== '') {
+    fr.onload = function () {
+      paintImg(fr.result)
+      saveImg(fr.result)
+    }
+    fr.readAsDataURL(imgInput.files[0])
 
-  deleteImgModal()
+    deleteImgModal()
+  } else {
+    window.alert('이미지를 첨부해주세요.')
+  }
 }
 
 function init() {

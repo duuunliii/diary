@@ -10,6 +10,7 @@ const DDAY_LS = 'dday'
 
 const LI_CLASS = 'd-day-item'
 const NAME_BTN_CLASS = 'd-day-name-btn'
+const INPUT_NAME_CLASS = 'input-name'
 const INPUT_DATE_CLASS = 'input-date'
 const DDAY_CLASS = 'd-day-date'
 const DELETE_BTN_CLASS = 'd-day-delete-btn'
@@ -51,6 +52,7 @@ function calcDday(date) {
 function paintDday(name, date) {
   const li = document.createElement('li')
   const nameBtn = document.createElement('button')
+  const inputName = document.createElement('p')
   const inputDate = document.createElement('p')
   const dday = document.createElement('h3')
   const deleteBtn = document.createElement('button')
@@ -58,17 +60,20 @@ function paintDday(name, date) {
 
   li.classList.add(LI_CLASS)
   nameBtn.classList.add(NAME_BTN_CLASS)
+  inputName.classList.add(INPUT_NAME_CLASS)
   inputDate.classList.add(INPUT_DATE_CLASS)
   dday.classList.add(DDAY_CLASS)
   deleteBtn.classList.add(DELETE_BTN_CLASS)
 
-  nameBtn.innerText = name
-  inputDate.innerText = date
+  inputName.innerHTML = name
+  inputDate.innerHTML = date
   dday.innerText = calcDday(date)
 
+  // nameBtn.addEventListener('click', changeDday)
   deleteBtn.addEventListener('click', deleteDday)
 
   li.appendChild(nameBtn)
+  nameBtn.appendChild(inputName)
   nameBtn.appendChild(inputDate)
   li.appendChild(dday)
   li.appendChild(deleteBtn)
@@ -85,8 +90,8 @@ function paintDday(name, date) {
   saveDday()
 }
 
-function deleteDday(event) {
-  const btn = event.target
+function deleteDday(evt) {
+  const btn = evt.target
   const li = btn.parentNode
 
   //html
@@ -100,13 +105,40 @@ function deleteDday(event) {
   saveDday()
 }
 
+// function changeDday(evt) {
+//   ddayForm.removeEventListener('submit', ddaySubmit)
+//   let btn = evt.target
+
+//   if (btn.nodeName == 'P') {
+//     btn = btn.parentNode
+//   }
+
+//   let name = btn.childNodes[0].innerHTML
+//   let date = btn.childNodes[1].innerHTML
+
+//   makeDdayModal()
+//   ddayNameInput.value = name
+//   ddayDateInput.value = date
+
+// console.log(btn.parentNode.id)
+// console.log(
+//   ddayList.childNodes[btn.parentNode.id].childNodes[0].childNodes[0].innerHTML
+// )
+// }
+
 function ddaySubmit(evt) {
   evt.preventDefault()
   const submitName = ddayNameInput.value
   const submitDate = ddayDateInput.value
-  paintDday(submitName, submitDate)
-  deleteDdayModal()
-  ddayNameInput.value = ''
+
+  if (submitDate.trim() !== '' && submitName.trim() !== '') {
+    paintDday(submitName, submitDate)
+    deleteDdayModal()
+    ddayNameInput.value = ''
+    ddayDateInput.value = ''
+  } else {
+    window.alert('이름과 날짜를 입력해주세요.')
+  }
 }
 
 function loadDday() {
