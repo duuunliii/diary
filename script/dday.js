@@ -33,11 +33,12 @@ function saveDday() {
 }
 
 function calcDday(date) {
-  let getDate = new Date()
+  let currentDate = new Date()
+  currentDate.setHours(0)
+  currentDate.setMinutes(0)
+  currentDate.setSeconds(0)
+  currentDate.setMilliseconds(0)
 
-  let currentDate = new Date(
-    `${getDate.getFullYear()}-${getDate.getMonth() + 1}-${getDate.getDate()}`
-  )
   let dateObj = new Date(date)
   dateObj.setHours(0)
 
@@ -59,7 +60,6 @@ function calcInterval() {
   const li = ddayList.childNodes
 
   for (let id = 0; id < li.length; id++) {
-    // li[id].childNodes[1].innerText = calcDday(ddayArray[id].date)
     li[id].childNodes[1].innerText = calcDday(ddayArray[id].date)
   }
 }
