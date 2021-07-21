@@ -8,15 +8,15 @@ let ddayCancelBtn = ddayModal.querySelector('.cancel-btn')
 
 const DDAY_LS = 'dday'
 
-const LI_CLASS = 'd-day-item'
+const DDAY_LI_CLASS = 'd-day-item'
 const NAME_BTN_CLASS = 'd-day-name-btn'
 const INPUT_NAME_CLASS = 'input-name'
 const INPUT_DATE_CLASS = 'input-date'
 const DDAY_CLASS = 'd-day-date'
-const DELETE_BTN_CLASS = 'd-day-delete-btn'
+const DDAY_DELETE_BTN_CLASS = 'd-day-delete-btn'
 
 let ddayArray = []
-let newID = -1
+let ddayID = -1
 
 function makeDdayModal() {
   ddayModal.classList.add(ACTIVE_CLASS)
@@ -33,8 +33,14 @@ function saveDday() {
 }
 
 function calcDday(date) {
-  let currentDate = new Date()
+  let getDate = new Date()
+
+  let currentDate = new Date(
+    `${getDate.getFullYear()}-${getDate.getMonth() + 1}-${getDate.getDate()}`
+  )
   let dateObj = new Date(date)
+  dateObj.setHours(0)
+
   let timeDiff = Math.floor((currentDate - dateObj) / 1000 / 60 / 60 / 24)
   let result = ''
 
@@ -49,6 +55,15 @@ function calcDday(date) {
   return result
 }
 
+function calcInterval() {
+  const li = ddayList.childNodes
+
+  for (let id = 0; id < li.length; id++) {
+    // li[id].childNodes[1].innerText = calcDday(ddayArray[id].date)
+    li[id].childNodes[1].innerText = calcDday(ddayArray[id].date)
+  }
+}
+
 function paintDday(name, date) {
   const li = document.createElement('li')
   const nameBtn = document.createElement('button')
@@ -56,14 +71,14 @@ function paintDday(name, date) {
   const inputDate = document.createElement('p')
   const dday = document.createElement('h3')
   const deleteBtn = document.createElement('button')
-  newID++
+  ddayID++
 
-  li.classList.add(LI_CLASS)
+  li.classList.add(DDAY_LI_CLASS)
   nameBtn.classList.add(NAME_BTN_CLASS)
   inputName.classList.add(INPUT_NAME_CLASS)
   inputDate.classList.add(INPUT_DATE_CLASS)
   dday.classList.add(DDAY_CLASS)
-  deleteBtn.classList.add(DELETE_BTN_CLASS)
+  deleteBtn.classList.add(DDAY_DELETE_BTN_CLASS)
 
   inputName.innerHTML = name
   inputDate.innerHTML = date
@@ -77,13 +92,13 @@ function paintDday(name, date) {
   nameBtn.appendChild(inputDate)
   li.appendChild(dday)
   li.appendChild(deleteBtn)
-  li.id = newID
+  li.id = ddayID
   ddayList.appendChild(li)
 
   const ddayObj = {
     name: name,
     date: date,
-    id: newID,
+    id: ddayID,
   }
 
   ddayArray.push(ddayObj)
@@ -106,7 +121,7 @@ function deleteDday(evt) {
 }
 
 // function changeDday(evt) {
-//   ddayForm.removeEventListener('submit', ddaySubmit)
+//   ddayForm.removeEventListener('submit', submitDday)
 //   let btn = evt.target
 
 //   if (btn.nodeName == 'P') {
@@ -126,7 +141,7 @@ function deleteDday(evt) {
 // )
 // }
 
-function ddaySubmit(evt) {
+function submitDday(evt) {
   evt.preventDefault()
   const submitName = ddayNameInput.value
   const submitDate = ddayDateInput.value
@@ -151,18 +166,10 @@ function loadDday() {
   }
 }
 
-function calcInterval() {
-  const li = ddayList.childNodes
-
-  for (let id = 0; id < li.length; id++) {
-    li[id].childNodes[1].innerText = calcDday(ddayArray[id].date)
-  }
-}
-
 function init() {
   ddayAddBtn.addEventListener('click', makeDdayModal)
   ddayCancelBtn.addEventListener('click', deleteDdayModal)
-  ddayForm.addEventListener('submit', ddaySubmit)
+  ddayForm.addEventListener('submit', submitDday)
   loadDday()
   setInterval(calcInterval, 1000)
 }
