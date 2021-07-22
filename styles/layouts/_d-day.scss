@@ -98,7 +98,7 @@ $d-day-margin-size: 40px;
 
       .d-day-name-btn {
         display: inline-block;
-        width: 75%;
+        width: 70%;
         text-align: left;
 
         .input-name {
@@ -116,7 +116,7 @@ $d-day-margin-size: 40px;
         @include text-style(16, $primary);
         @include text-weight(700);
         display: inline-block;
-        width: 25%;
+        width: 30%;
         text-align: center;
       }
 
