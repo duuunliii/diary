@@ -1,8 +1,13 @@
 const localInfo = document.querySelector('.local-info')
 const time = localInfo.querySelector('.time')
 const ampm = localInfo.querySelector('.ampm')
+
 const calendar = localInfo.querySelector('.date')
+
 const weather = localInfo.querySelector('.weather')
+let weatherIcon = weather.querySelector('.weather-icon')
+let weatherInfo = weather.querySelector('.weather-info')
+let weatherTemp = weatherInfo.querySelector('.temp')
 
 const WEATHER_API_KEY = '7b6faccf71e614cc2afcf18921927f13'
 const COORDS = 'coords'
@@ -48,9 +53,30 @@ function getWeather(lat, lon) {
       return response.json()
     })
     .then(function (json) {
+      const iconID = json.weather[0].icon
+      const temp = json.main.temp
+      const name = json.weather[0].main
       const place = json.name
-      const currentTemp = json.main.temp
-      weather.innerHTML = `${place}. ${currentTemp}℃`
+
+      const icon = document.createElement('img')
+      icon.setAttribute(
+        'src',
+        `http://openweathermap.org/img/wn/${iconID}@2x.png`
+      )
+      icon.setAttribute('alt', 'weather icon')
+      weatherIcon.appendChild(icon)
+
+      let weatherName = document.createElement('h3')
+      let weatherLocation = document.createElement('p')
+
+      weatherTemp.innerHTML = `${temp}℃`
+      weatherName.innerHTML = name
+      weatherName.classList.add('name')
+      weatherLocation.innerHTML = place
+      weatherLocation.classList.add('location')
+
+      weatherInfo.appendChild(weatherName)
+      weatherInfo.appendChild(weatherLocation)
     })
 }
 
@@ -59,14 +85,14 @@ function saveCoords(coordsObj) {
 }
 
 function handleGeoSucces(position) {
-  console.log(position.coords)
+  // console.log(position.coords)
   const latitude = position.coords.latitude
   const longitude = position.coords.longitude
   const coordsObj = {
     latitude,
     longitude,
   }
-  saveCoords(coordsObj)
+  // saveCoords(coordsObj)
   getWeather(latitude, longitude)
 }
 
@@ -85,13 +111,15 @@ function init() {
   getDate()
   setInterval(getDate, 1000)
 
-  const currentWeather = localStorage.getItem(COORDS)
-  if (currentWeather == null) {
-    askForCoords()
-  } else {
-    const parsedCoords = JSON.parse(currentWeather)
-    getWeather(parsedCoords.latitude, parsedCoords.longitude)
-  }
+  askForCoords()
+
+  // const currentWeather = localStorage.getItem(COORDS)
+  // if (currentWeather == null) {
+  // askForCoords()
+  // } else {
+  //   const parsedCoords = JSON.parse(currentWeather)
+  //   getWeather(parsedCoords.latitude, parsedCoords.longitude)
+  // }
 }
 
 init()

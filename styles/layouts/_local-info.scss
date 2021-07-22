@@ -25,7 +25,48 @@
   }
 
   .weather {
-    @include text-style(16);
-    @include text-weight(400);
+    @include flexbox(start);
+
+    width: 92%;
+    height: 120px;
+    margin: 30px auto 0;
+    background-color: $background;
+    border-radius: $rect;
+    box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px $white;
+
+    &-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      margin: 0 20px;
+      overflow: hidden;
+      background-color: $primary;
+      border-radius: $circle;
+      box-shadow: 5px 5px 5px #a0a2a4, -5px -5px 5px #ffffff;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      @include text-weight(400);
+      text-align: left;
+
+      .temp {
+        @include text-style(18);
+      }
+
+      .name {
+        @include text-style(14);
+      }
+
+      .location {
+        @include text-style(14);
+      }
+    }
   }
 }
