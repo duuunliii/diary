@@ -15,9 +15,8 @@
       margin: 0 20px;
 
       button {
-        @include text-style(14, $primary);
-        @include text-weight(400);
-        display: block;
+        @include flexbox;
+        @include text-style(26, $primary);
         width: 65px;
         height: 65px;
         padding: 5px;
@@ -28,7 +27,7 @@
 
       &.tns-nav-active {
         button {
-          @include text-weight(700);
+          color: #262626;
           box-shadow: inset 5px 5px 6px #d1d4d6, inset -5px -5px 6px $white;
         }
       }
