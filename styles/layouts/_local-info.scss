@@ -26,7 +26,7 @@
 
   .weather {
     @include flexbox(start);
-
+    position: relative;
     width: 92%;
     height: 120px;
     margin: 30px auto 0;
@@ -67,6 +67,23 @@
       .location {
         @include text-style(14);
       }
+    }
+
+    &-refresh-btn {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      background-color: $background;
+      background-image: url('./assets/refresh.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 60% 60%;
+      border-radius: $circle;
+      box-shadow: 2px 2px 4px #c2c5c7, -2px -2px 4px $white;
     }
   }
 }

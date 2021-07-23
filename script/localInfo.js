@@ -5,9 +5,13 @@ const ampm = localInfo.querySelector('.ampm')
 const calendar = localInfo.querySelector('.date')
 
 const weather = localInfo.querySelector('.weather')
-let weatherIcon = weather.querySelector('.weather-icon')
-let weatherInfo = weather.querySelector('.weather-info')
-let weatherTemp = weatherInfo.querySelector('.temp')
+const weatherIcon = weather.querySelector('.weather-icon')
+const weatherInfo = weather.querySelector('.weather-info')
+const weatherRefreshBtn = weather.querySelector('.weather-refresh-btn')
+
+let weatherTemp = document.createElement('h1')
+let weatherName = document.createElement('h3')
+let weatherLocation = document.createElement('p')
 
 const WEATHER_API_KEY = '7b6faccf71e614cc2afcf18921927f13'
 const COORDS = 'coords'
@@ -45,6 +49,13 @@ function getDate() {
   calendar.innerHTML = `${year}.${month + 1}.${date} ${dayConverter(day)}`
 }
 
+function refreshWeather() {
+  localStorage.removeItem(COORDS)
+  weatherInfo.innerText = 'Loading...'
+  weatherIcon.removeChild(weatherIcon.childNodes[0])
+  askForCoords()
+}
+
 function getWeather(lat, lon) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
@@ -58,7 +69,7 @@ function getWeather(lat, lon) {
       const name = json.weather[0].main
       const place = json.name
 
-      const icon = document.createElement('img')
+      let icon = document.createElement('img')
       icon.setAttribute(
         'src',
         `https://openweathermap.org/img/wn/${iconID}@2x.png`
@@ -66,15 +77,15 @@ function getWeather(lat, lon) {
       icon.setAttribute('alt', 'weather icon')
       weatherIcon.appendChild(icon)
 
-      let weatherName = document.createElement('h3')
-      let weatherLocation = document.createElement('p')
-
-      weatherTemp.innerHTML = `${temp}℃`
+      weatherInfo.innerText = ''
+      weatherTemp.innerHTML = `${temp} ℃`
+      weatherTemp.classList.add('temp')
       weatherName.innerHTML = name
       weatherName.classList.add('name')
       weatherLocation.innerHTML = place
       weatherLocation.classList.add('location')
 
+      weatherInfo.appendChild(weatherTemp)
       weatherInfo.appendChild(weatherName)
       weatherInfo.appendChild(weatherLocation)
     })
@@ -85,14 +96,14 @@ function saveCoords(coordsObj) {
 }
 
 function handleGeoSucces(position) {
-  // console.log(position.coords)
+  console.log(position.coords)
   const latitude = position.coords.latitude
   const longitude = position.coords.longitude
   const coordsObj = {
     latitude,
     longitude,
   }
-  // saveCoords(coordsObj)
+  saveCoords(coordsObj)
   getWeather(latitude, longitude)
 }
 
@@ -111,15 +122,15 @@ function init() {
   getDate()
   setInterval(getDate, 1000)
 
-  askForCoords()
+  const currentWeather = localStorage.getItem(COORDS)
+  if (currentWeather == null) {
+    askForCoords()
+  } else {
+    const parsedCoords = JSON.parse(currentWeather)
+    getWeather(parsedCoords.latitude, parsedCoords.longitude)
+  }
 
-  // const currentWeather = localStorage.getItem(COORDS)
-  // if (currentWeather == null) {
-  // askForCoords()
-  // } else {
-  //   const parsedCoords = JSON.parse(currentWeather)
-  //   getWeather(parsedCoords.latitude, parsedCoords.longitude)
-  // }
+  weatherRefreshBtn.addEventListener('click', refreshWeather)
 }
 
 init()
