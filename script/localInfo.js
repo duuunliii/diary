@@ -61,7 +61,7 @@ function getWeather(lat, lon) {
       const icon = document.createElement('img')
       icon.setAttribute(
         'src',
-        `http://openweathermap.org/img/wn/${iconID}@2x.png`
+        `https://openweathermap.org/img/wn/${iconID}@2x.png`
       )
       icon.setAttribute('alt', 'weather icon')
       weatherIcon.appendChild(icon)
