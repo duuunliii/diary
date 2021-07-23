@@ -42,7 +42,7 @@
       overflow: hidden;
       background-color: $primary;
       border-radius: $circle;
-      box-shadow: 5px 5px 5px #a0a2a4, -5px -5px 5px #ffffff;
+      box-shadow: 5px 5px 5px #a0a2a4, -5px -5px 5px $white;
 
       img {
         display: block;
