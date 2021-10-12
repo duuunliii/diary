@@ -760,7 +760,7 @@ ol {
   max-height: calc(calc(100vh - 180px) - 285px);
   min-height: 100px;
   padding: 10px 10px;
-  margin: 0 auto 10px;
+  margin: 0 auto 20px;
   background-color: #f3f6f9;
   border-radius: 20px;
   box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px #fff; }

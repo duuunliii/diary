@@ -7,7 +7,7 @@ $local-info-height: 255px;
     max-height: calc(#{$sm-main-height} - #{$local-info-height + 30px});
     min-height: 100px;
     padding: 10px 10px;
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
     background-color: $background;
     border-radius: $rect;
     box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px $white;
