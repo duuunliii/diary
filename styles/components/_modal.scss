@@ -22,7 +22,8 @@
     form {
       width: 100%;
 
-      input {
+      input,
+      textarea {
         @include text-style(14, $primary);
         @include text-weight(700);
         width: 100%;
