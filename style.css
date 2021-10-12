@@ -704,7 +704,7 @@ ol {
     position: relative;
     width: 92%;
     height: 120px;
-    margin: 30px auto 0;
+    margin: 30px auto 10px;
     background-color: #f3f6f9;
     border-radius: 20px;
     box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px #fff; }
@@ -752,6 +752,42 @@ ol {
       background-size: 60% 60%;
       border-radius: 50%;
       box-shadow: 2px 2px 4px #c2c5c7, -2px -2px 4px #fff; }
+
+.memo-container {
+  position: relative;
+  width: 92%;
+  max-height: calc(calc(100vh - 180px) - 285px);
+  min-height: 100px;
+  padding: 10px 10px;
+  margin: 0 auto 10px;
+  background-color: #f3f6f9;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #b4b6b8, -5px -5px 10px #fff; }
+
+.memo-contents {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  width: 100%;
+  max-height: calc(calc(100vh - 180px) - 300px);
+  margin: 10px;
+  overflow: hidden scroll; }
+
+.memo-edit-btn {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: #f3f6f9;
+  background-image: url("./assets/pencil.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px #c2c5c7, -2px -2px 4px #fff; }
 
 .d-day-main {
   display: flex;
