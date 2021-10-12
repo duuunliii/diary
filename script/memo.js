@@ -50,6 +50,10 @@ function loadMemo() {
   if (currentMemo !== null) {
     const parsedMemo = JSON.parse(currentMemo)
     paintMemo(parsedMemo)
+
+    if (parsedMemo == '') {
+      memoContents.innerHTML = 'Add Memo'
+    }
   }
 }
 
