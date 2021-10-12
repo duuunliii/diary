@@ -2,9 +2,6 @@ $d-day-size: 170px;
 $d-day-margin-size: 40px;
 
 .d-day {
-  $container-top-margin: 20px;
-  $container-bottom-margin: 30px;
-
   &-main {
     @include flexbox;
     position: relative;
