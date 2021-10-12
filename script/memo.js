@@ -31,12 +31,9 @@ function submitMemo(e) {
   deleteMemoModal()
   paintMemo(submitMemo)
 
-  // if (submitMemo.trim() !== '') {
-  //   deleteMemoModal()
-  //   paintMemo(submitMemo)
-  // } else {
-  //   window.alert('내용을 입력해주세요')
-  // }
+  if (submitMemo.trim() == '') {
+    memoContents.innerHTML = 'Add Memo'
+  }
 }
 
 function saveMemo(memo) {
